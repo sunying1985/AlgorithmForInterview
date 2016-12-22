@@ -210,6 +210,28 @@ public class NumberSort {
 
     }
 
+    /**
+     * 二分查找
+     * @param array    数组
+     * @param a        查找的元素
+     * @return
+     */
+    public static int biSearch(int []array,int a){
+        int lo=0;
+        int hi=array.length-1;
+        int mid;
+        while(lo<=hi){
+            mid=(lo+hi)/2;
+            if(array[mid]==a){
+                return mid+1;
+            }else if(array[mid]<a){
+                lo=mid+1;
+            }else{
+                hi=mid-1;
+            }
+        }
+        return -1;
+    }
     public static void main(String[] args )
     {
         int [] array = {-3,75,12,-3,4,6,90,54};//原数组
